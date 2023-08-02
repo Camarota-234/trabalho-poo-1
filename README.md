@@ -7,18 +7,18 @@
 O jogo original é vendido como um baralho sobre alguma temática (Carros,
 Dinossauros, Países, Times de Futebol, etc). Cada baralho deste consiste de 32 cartas e
 todas elas possuem as seguintes características:
-● Um nome (por exemplo, Tiranossauro Rex, Brasil, Ferrari);
-● Um código (que é único para cada carta, sendo que seu valor é dividido em 8 grupos
+- Um nome (por exemplo, Tiranossauro Rex, Brasil, Ferrari);
+- Um código (que é único para cada carta, sendo que seu valor é dividido em 8 grupos
 de 4 cartas - 1A, 1B, 1C, 1D, 2A….8C e 8D);
-● Um conjunto de 1 a 3 tipos de curiosidades (informações extras) que não tem peso
+- Um conjunto de 1 a 3 tipos de curiosidades (informações extras) que não tem peso
 para o jogo (por exemplo, para Dinossauros, seu período de existência; para países,
 seu idioma oficial e continente; para carro, seu modelo);
-● Um conjunto de exatos 4 atributos relevantes para o jogo, sempre com as seguintes
+- Um conjunto de exatos 4 atributos relevantes para o jogo, sempre com as seguintes
 informações:
-○ Nome do atributo (por exemplo, peso, velocidade, altura, potência, etc -
+ - Nome do atributo (por exemplo, peso, velocidade, altura, potência, etc -
 depende da temática);
-○ Valor numérico deste atributo (123, 10.000,00, 0.40, etc);
-○ Unidade de medida deste atributo (kg, km/h, m, ou vazio);
+ - Valor numérico deste atributo (123, 10.000,00, 0.40, etc);
+ - Unidade de medida deste atributo (kg, km/h, m, ou vazio);
 ● Por fim, uma carta apenas é chamada "SuperTrunfo", sendo uma espécie de
 coringa, cuja funcionalidade mencionaremos a seguir.
 O jogo começa com a distribuição entre os jogadores de todas as cartas do baralho.
