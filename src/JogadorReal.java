@@ -1,9 +1,9 @@
-public abstract class JogadorAbstrato {
-    private String nome;
+public class JogadorReal extends JogadorAbstrato {
     private Baralho monte;
+    private String nome;
 
-    public JogadorAbstrato(String nome) {
-        this.nome = nome;
+    public JogadorReal(String nome) {
+        super(nome);
     }
 
     public void setMonte(Baralho monte) {

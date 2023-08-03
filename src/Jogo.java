@@ -18,9 +18,23 @@ public class Jogo {
             System.exit(0); break;
         }
 
-        Baralho mesa = new Baralho();
-        mesa.gerarBaralho();
-        mesa.embaralhar();
+        Baralho superTrunfo = new Baralho(tema);
+        superTrunfo.gerarBaralho();
+        superTrunfo.embaralhar();
+
+        System.out.println("================================");
+        System.out.println("Baralho criado e embaralhado");
+        //System.out.println("Qual a dificuldade desejada? (Digite um número de 1 a 3)");
+        JogadorReal jogador1 = new JogadorReal("João");
+        JogadorRandomico jogador2 = new JogadorRandomico("Maria");
+
+        superTrunfo.distribuir(new JogadorAbstrato[]{jogador1, jogador2});
+
+
+
+
+
+
 
 
 

@@ -12,9 +12,10 @@ import java.util.LinkedList;
 public class Baralho extends LinkedList<Carta> {
 
     private ArrayList<Carta> cartas;
+    private int tema;
 
-    public Baralho() {
-        cartas = new ArrayList<>();
+    public Baralho(int tema) {
+        this.setTema(tema);
     }
 
     public void Adicionar(Carta carta) {
@@ -65,4 +66,31 @@ public class Baralho extends LinkedList<Carta> {
     public void embaralhar() {
         Collections.shuffle(this);
     }
+
+    public void distribuir(JogadorAbstrato[] jogadores) {
+        int jogador = 0;
+        Iterator<Carta> iterador = this.iterator();
+
+        while (iterador.hasNext()) {
+
+            if (jogadores[jogador].getMonte() == null)
+				jogadores[jogador].setMonte( new Baralho(this.tema) );
+
+			jogadores[jogador].getMonte().add(iterador.next());
+			iterador.remove();
+
+			jogador = (jogador + 1) % jogadores.length;
+
+
+        }
+    }
+
+    public int getTema() {
+        return tema;
+    }
+
+    public void setTema(int tema) {
+        this.tema = tema;
+    }
+
 }
