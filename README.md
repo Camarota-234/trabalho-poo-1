@@ -16,10 +16,12 @@ para o jogo (por exemplo, para Dinossauros, seu período de existência; para pa
 seu idioma oficial e continente; para carro, seu modelo);
 - Um conjunto de exatos 4 atributos relevantes para o jogo, sempre com as seguintes
 informações:
+
  - Nome do atributo (por exemplo, peso, velocidade, altura, potência, etc -
 depende da temática);
  - Valor numérico deste atributo (123, 10.000,00, 0.40, etc);
  - Unidade de medida deste atributo (kg, km/h, m, ou vazio);
+
 - Por fim, uma carta apenas é chamada "SuperTrunfo", sendo uma espécie de
 coringa, cuja funcionalidade mencionaremos a seguir.
 
@@ -55,6 +57,7 @@ adversário, que deverá ser simulado pelo seu próprio programa, usando escolha
 aleatórias.
 
 ### Classes esperadas (devem existir):
+
 - Baralho - É uma implementação da Java LinkedList de Cartas, com algumas
 operações relacionadas à elas como Embaralhar e Distribuir entre os
 jogadores. Seu método "Carregar" deve instanciar as Cartas. De início, você irá
@@ -106,6 +109,7 @@ adiante na matéria.
 
 Para aqueles que se aventurarem a implementar uma interface gráfica para o Jogo, será
 dado um total de 1 ponto extra (10%) na média final. Nesta proposta, espera-se:
+
 - Uma janela principal contendo a apresentação do jogo;
 - Uma etapa de seleção do tema do jogo através de um combo de seleção, mostrando
 as opções disponíveis;
