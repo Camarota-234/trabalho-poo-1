@@ -9,13 +9,23 @@ public class Jogo {
         Scanner scanner = new Scanner(System.in);
 
         switch (tema) {
-            case 1: System.out.println("Baralho carregado com tema Personalidades histórias"); break;
-            case 2: System.out.println("Baralho carregado com tema Motos"); break;
-            case 3: System.out.println("Baralho carregado com tema Dinossauros"); break;
-            case 4: System.out.println("OK"); break;
-            default: System.out.println("Esta não é uma opção válida");
-            System.out.println("\n[ PROGRAMA ENCERRADO ]");
-            System.exit(0); break;
+            case 1:
+                System.out.println("Baralho carregado com tema Personalidades histórias");
+                break;
+            case 2:
+                System.out.println("Baralho carregado com tema Motos");
+                break;
+            case 3:
+                System.out.println("Baralho carregado com tema Dinossauros");
+                break;
+            case 4:
+                System.out.println("OK");
+                break;
+            default:
+                System.out.println("Esta não é uma opção válida");
+                System.out.println("\n[ PROGRAMA ENCERRADO ]");
+                System.exit(0);
+                break;
         }
 
         Baralho superTrunfo = new Baralho(tema);
@@ -24,31 +34,42 @@ public class Jogo {
 
         System.out.println("================================");
         System.out.println("Baralho criado e embaralhado");
-        //System.out.println("Qual a dificuldade desejada? (Digite um número de 1 a 3)");
+        // System.out.println("Qual a dificuldade desejada? (Digite um número de 1 a
+        // 3)");
         JogadorReal jogador1 = new JogadorReal("João");
         JogadorRandomico jogador2 = new JogadorRandomico("Maria");
 
-        superTrunfo.distribuir(new JogadorAbstrato[]{jogador1, jogador2});
+        superTrunfo.distribuir(new JogadorAbstrato[] { jogador1, jogador2 });
+
+        System.out.println("================================");
+        System.out.println("PARTIDA INICIADA");
+        System.out.println("================================ \n");
 
 
+        while ()
+        jogar();
 
+    }
 
+    public void mostrarStatus() {
+        int rodada = 1;
+        System.out.println("================================");
+        System.out.println("RODADA " + rodada);
+        System.out.println("================================ \n");
+        rodada++;
+    }
 
+    public void mostrarJogadorDaVez() {
 
+        System.out.println("================================");
+        System.out.println("TURNO DO " + jogador1.toString());
+        System.out.println("================================ \n");
+    }
 
+    public void jogar() {
 
-
-
-
-
-
-
-
-
-
-
-
-
+        mostrarStatus();
+        mostrarJogadorDaVez();
 
     }
 }

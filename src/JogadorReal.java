@@ -13,4 +13,12 @@ public class JogadorReal extends JogadorAbstrato {
     public Baralho getMonte() {
         return this.monte;
     }
+
+    public boolean vencedorPartida() {
+        return false;
+    }
+
+    public String toString() {
+        return "JOGADOR: " + nome ;
+    }
 }

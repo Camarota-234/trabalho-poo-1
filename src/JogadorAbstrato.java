@@ -13,4 +13,10 @@ public abstract class JogadorAbstrato {
     public Baralho getMonte() {
         return this.monte;
     }
+
+    public abstract boolean vencedorPartida();
+
+    public abstract String toString();
+
+    public abstract JogadorAbstrato getJogadorByIndex(int index);
 }

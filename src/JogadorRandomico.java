@@ -14,4 +14,12 @@ public class JogadorRandomico extends JogadorAbstrato {
         return this.monte;
     }
 
+    public boolean vencedorPartida() {
+        return false;
+    }
+
+    public String toString() {
+        return "JOGADOR: " + nome ;
+    }
+
 }

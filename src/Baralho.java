@@ -74,14 +74,12 @@ public class Baralho extends LinkedList<Carta> {
         while (iterador.hasNext()) {
 
             if (jogadores[jogador].getMonte() == null)
-				jogadores[jogador].setMonte( new Baralho(this.tema) );
+                jogadores[jogador].setMonte(new Baralho(this.tema));
 
-			jogadores[jogador].getMonte().add(iterador.next());
-			iterador.remove();
+            jogadores[jogador].getMonte().add(iterador.next());
+            iterador.remove();
 
-			jogador = (jogador + 1) % jogadores.length;
-
-
+            jogador = (jogador + 1) % jogadores.length;
         }
     }
 
