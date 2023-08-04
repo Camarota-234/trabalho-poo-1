@@ -7,6 +7,7 @@ public class Carta {
     private String dado4;
     private String curiosidade;
     private String superTrunfo;
+
     public Carta(String nome, String codigo, String dado1, String dado2, String dado3, String dado4, String curiosidade,
             String superTrunfo) {
         this.nome = nome;
