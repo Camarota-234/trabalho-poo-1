@@ -29,7 +29,7 @@ public class Jogo {
         }
 
         Baralho superTrunfo = new Baralho(tema);
-        superTrunfo.gerarBaralho();
+        superTrunfo.Carregar();
         superTrunfo.embaralhar();
 
         System.out.println("================================");

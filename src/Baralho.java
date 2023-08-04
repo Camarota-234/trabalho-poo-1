@@ -26,7 +26,7 @@ public class Baralho extends LinkedList<Carta> {
         cartas.remove(carta);
     }
 
-    public void gerarBaralho() {
+    public void Carregar() {
 
         InputStream fluxo = null;
         InputStreamReader leitor = null;
