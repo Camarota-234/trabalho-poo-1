@@ -107,6 +107,12 @@ public class Baralho extends LinkedList<Carta> {
         }
     }
 
+    public Carta pegarTopo() {
+
+			return this.getFirst();
+
+	}
+
     public void listarCartas() {
 		System.out.println(this);
 	}
@@ -117,6 +123,10 @@ public class Baralho extends LinkedList<Carta> {
 
     public void setTema(int tema) {
         this.tema = tema;
+    }
+
+    public int contagemCartas() {
+        return this.size();
     }
 
 }

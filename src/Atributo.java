@@ -1,18 +1,15 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.List;
 
 public class Atributo {
+	private List<String> valor;
 
-    private String nome;
-    private String valor;
-    private String medida;
+	public Atributo(){}
 
-    public Atributo(String nome, String valor, String medida) {
-        this.nome = nome;
-        this.valor = valor;
-        this.medida = medida;
-    }
-
-
+	public List<String> getValor() {
+		return this.valor;
+	}
+	public void setValor(List<String> valor) {
+		this.valor = valor;
+	}
 
 }

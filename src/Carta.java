@@ -26,7 +26,7 @@ public class Carta {
     }
 
     public String toString() {
-        return "Código: " + codigo + " Nome: " + nome + " Atributo 1: " + getAtributo();
+        return "Código: " + codigo + " Nome: " + nome + " \nAtributo 1: " + getAtributo();
     }
 
     public static List<String> getAtributo() {
