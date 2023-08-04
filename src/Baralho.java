@@ -39,7 +39,11 @@ public class Baralho extends LinkedList<Carta> {
 
             String linha = leitorComBuffer.readLine();
 
+            String[] atributos = linha.split(",");
+
+
             linha = leitorComBuffer.readLine();
+
             while (linha != null) {
 
                 String[] dados = linha.split(",");

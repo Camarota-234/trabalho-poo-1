@@ -18,5 +18,4 @@ public abstract class JogadorAbstrato {
 
     public abstract String toString();
 
-    public abstract JogadorAbstrato getJogadorByIndex(int index);
 }

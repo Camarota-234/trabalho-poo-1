@@ -46,7 +46,6 @@ public class Jogo {
         System.out.println("================================ \n");
 
 
-        while ()
         jogar();
 
     }
@@ -62,7 +61,7 @@ public class Jogo {
     public void mostrarJogadorDaVez() {
 
         System.out.println("================================");
-        System.out.println("TURNO DO " + jogador1.toString());
+        System.out.println("TURNO DO " );
         System.out.println("================================ \n");
     }
 
