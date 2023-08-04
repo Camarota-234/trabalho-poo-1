@@ -4,13 +4,15 @@ import java.util.LinkedList;
 public class Atributo {
 
     private String nome;
-    private double valor;
+    private String valor;
     private String medida;
 
-    public Atributo(String nome, double valor, String medida) {
+    public Atributo(String nome, String valor, String medida) {
         this.nome = nome;
         this.valor = valor;
         this.medida = medida;
     }
+
+
 
 }

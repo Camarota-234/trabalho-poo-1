@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Baralho extends LinkedList<Carta> {
 
@@ -39,8 +40,27 @@ public class Baralho extends LinkedList<Carta> {
 
             String linha = leitorComBuffer.readLine();
 
-            String[] atributos = linha.split(",");
+            List<String> atributos = new ArrayList();
 
+            String[] nomeAtributos = linha.split(",");
+            for (String i : nomeAtributos) {
+                atributos.add(i);
+            }
+            Carta.setAtributo(atributos);
+
+            linha = leitorComBuffer.readLine();
+            String[] valorAtributos = linha.split(",");
+            for (String i : valorAtributos) {
+                atributos.add(i);
+            }
+            Carta.setAtributo(atributos);
+
+            linha = leitorComBuffer.readLine();
+            String[] medidaAtributos = linha.split(",");
+            for (String i : medidaAtributos) {
+                atributos.add(i);
+            }
+            Carta.setAtributo(atributos);
 
             linha = leitorComBuffer.readLine();
 
@@ -86,6 +106,10 @@ public class Baralho extends LinkedList<Carta> {
             jogador = (jogador + 1) % jogadores.length;
         }
     }
+
+    public void listarCartas() {
+		System.out.println(this);
+	}
 
     public int getTema() {
         return tema;

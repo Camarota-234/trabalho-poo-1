@@ -3,9 +3,13 @@ import java.util.ArrayList;
 
 public class Jogo {
     private int tema;
+    private static JogadorAbstrato[] jogadores;
 
     public Jogo(int tema) {
         this.tema = tema;
+        jogadores[0] = new JogadorReal("João Guilherme");
+        jogadores[1] = new JogadorRandomico("Máquina");
+
         Scanner scanner = new Scanner(System.in);
 
         switch (tema) {
@@ -45,6 +49,7 @@ public class Jogo {
         System.out.println("PARTIDA INICIADA");
         System.out.println("================================ \n");
 
+        jogador1.getMonte().listarCartas();
 
         jogar();
 
@@ -55,20 +60,39 @@ public class Jogo {
         System.out.println("================================");
         System.out.println("RODADA " + rodada);
         System.out.println("================================ \n");
+        System.out.println("VOCÊ AINDA TEM " + rodada);
+        System.out.println("================================ \n");
         rodada++;
     }
 
     public void mostrarJogadorDaVez() {
 
         System.out.println("================================");
-        System.out.println("TURNO DO " );
+        System.out.println("TURNO DO ");
         System.out.println("================================ \n");
     }
 
     public void jogar() {
 
-        mostrarStatus();
-        mostrarJogadorDaVez();
+        while (ganhou() == false) {
 
+            mostrarStatus();
+            mostrarJogadorDaVez();
+
+        }
+
+    }
+
+    public static boolean ganhou() {
+
+        boolean vencedor = false;
+
+        for (int i = 0; i < jogadores.length; i++) {
+            if (jogadores[i].getMonte().size() == 32) {
+                System.out.println("O JOGADOR " + i + " GANHOU O JOGO!");
+                vencedor = true;
+            }
+        }
+        return vencedor;
     }
 }
