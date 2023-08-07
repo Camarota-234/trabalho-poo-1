@@ -2,18 +2,18 @@ import java.util.List;
 
 public class Carta {
     private static List<String> atributos;
-    private static List<String> valor;
+    private Atributo valor;
     private static List<String> unidade;
     private String nome;
     private String codigo;
-    private String dado1;
-    private String dado2;
-    private String dado3;
-    private String dado4;
+    private Double dado1;
+    private Double dado2;
+    private Double dado3;
+    private Double dado4;
     private String curiosidade;
     private String curiosidade2;
 
-    public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, String dado1, String dado2, String dado3, String dado4) {
+    public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, Double dado1, Double dado2, Double dado3, Double dado4) {
 
         this.nome = nome;
         this.codigo = codigo;
@@ -26,10 +26,10 @@ public class Carta {
     }
 
     public String toString() {
-        String textoNome = " ";
-        String textoDados = " ";
+        String textoNome = "";
+        String textoDados = "";
         String textoFinal;
-        String[] dados1 = {dado1, dado2, dado3, dado4};
+        Double[] dados1 = {dado1, dado2, dado3, dado4};
 
         for (int i = 0; i < atributos.size(); i++) {
             textoDados = textoDados + "\n" + atributos.get(i) + ": " + dados1[i] + " " + unidade.get(i);
@@ -37,7 +37,7 @@ public class Carta {
 
         textoNome = textoNome + "Nome: " + this.nome + "\nCódigo: " + this.codigo;
         textoFinal = textoNome + textoDados;
-        return textoFinal;
+        return textoFinal + "\n";
     }
 
     public static List<String> getAtributos() {
@@ -56,12 +56,18 @@ public class Carta {
         Carta.unidade = unidade;
     }
 
-    public static List<String> getValor() {
-        return valor;
+    public Atributo getValor() {
+		return valor;
+	}
+	public void setValor(Atributo valor) {
+		this.valor = valor;
+	}
+
+    public Double getDado1() {
+        return dado1;
     }
 
-    public static void setValor(List<String> valor) {
-        Carta.valor = valor;
+    public void setDado1(Double dado1) {
+        this.dado1 = dado1;
     }
-
 }

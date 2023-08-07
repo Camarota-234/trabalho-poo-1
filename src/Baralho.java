@@ -70,7 +70,8 @@ public class Baralho extends LinkedList<Carta> {
             while (linha != null) {
 
                 String[] dados = linha.split(",");
-                this.add(new Carta(dados[0], dados[1], dados[2], dados[3], dados[4], dados[5], dados[6], dados[7]));
+                this.add(new Carta(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), Double.parseDouble(dados[5]), Double.parseDouble(dados[6]), Double.parseDouble(dados[7])));
+                Atributo valor = new Atributo();
                 linha = leitorComBuffer.readLine();
 
             }

@@ -7,6 +7,7 @@ public class Jogo {
     private int totalJogadores;
     private static JogadorAbstrato[] jogadores = new JogadorAbstrato[2];
     private static int jogadorDaVez;
+    private static int vencedorDaVez;
 
     public Jogo(int tema) {
 
@@ -54,8 +55,8 @@ public class Jogo {
         System.out.println("PARTIDA INICIADA");
         System.out.println("================================ \n");
 
-        // jogador1.getMonte().listarCartas();
-        // jogador2.getMonte().listarCartas();
+        jogador1.getMonte().listarCartas();
+        jogador2.getMonte().listarCartas();
 
         jogar(jogador1, jogador2);
         totalJogadores = Jogo.getJogadores().length;
@@ -68,11 +69,12 @@ public class Jogo {
         int rodada = 0;
         int vez = 0;
         int atributoEscolhido;
+        int vencedorDaVez = 0;
         while (!existeVencedor()) {
 
             mostrarStatus(jogador1);
 
-            if (jogadorDaVez() == 0) {
+            if (jogadorDaVez == 0) {
                 System.out.println("================================");
                 System.out.println("SUA VEZ DE JOGAR");
                 System.out.println("================================ \n");
@@ -86,57 +88,61 @@ public class Jogo {
                 atributoEscolhido = maquinaEscolheAtributo();
 
             }
-            comparaCartas(atributoEscolhido);
+            vencedorDaVez = comparaCartas(atributoEscolhido);
+            roubaCarta(jogadorDaVez);
         }
 
     }
 
+    public void roubaCarta(int jogadorDaVez) {
+        if (jogadorDaVez == 0) {
+			jogadores[0].getMonte().addLast(jogadores[1].getMonte().pegarTopo());
+			jogadores[1].getMonte().removeFirst();
+        } else {
+            jogadores[1].getMonte().addLast(jogadores[0].getMonte().pegarTopo());
+			jogadores[0].getMonte().removeFirst();
+        }
+    }
+
     public int escolherAtributo() {
         int atributoEscolhido;
-		String texto = " ";
+        String texto = " ";
         Scanner scanner = new Scanner(System.in);
-		for (int i = 0; i < 4; i++) {
-			texto = texto + "[" + (i+1) + "] " + Carta.getAtributos().get(i) + "\n";
-		}
-		System.out.println(texto);
-		atributoEscolhido = scanner.nextInt();
-        scanner.close();
+        for (int i = 0; i < 4; i++) {
+            texto = texto + "[" + (i + 1) + "] " + Carta.getAtributos().get(i) + "\n";
+        }
+        System.out.println(texto + "\n");
+        atributoEscolhido = scanner.nextInt();
         return atributoEscolhido + 1;
-	}
+    }
 
     public int maquinaEscolheAtributo() {
 
         Random gerador = new Random();
         int atributoEscolhido = gerador.nextInt(4);
-        return atributoEscolhido;
+        return 3; //atributoEscolhido;
     }
 
     public static int comparaCartas(int atributo) {
-		double maior = 0;
-		int jogador = 0;
-		for (int i = 0; i <jogadores.length; i++) {
-			double valor = Double.valueOf(Carta.getValor().get(i)).doubleValue();
-			if (i == 0)
-				maior = valor;
-			else {
-				if (valor > maior) {
-					maior = valor;
-					jogador = i;
-				}
-				else if(valor == maior) {
-					jogadorDaVez = jogador;
-					break;
-				}
-			}
-		}
-		jogadorDaVez = jogador;
-		return jogador;
-	}
-
-    public static int jogadorDaVez() {
-
-        return 1;
-
+        double maior = 0;
+        int jogador = 0;
+        for (int i = 0; i < jogadores.length; i++) {
+            double valor = Double.valueOf(jogadores[i].getMonte().pegarTopo().getDado1())
+                    .doubleValue();
+            if (i == 0)
+                maior = valor;
+            else {
+                if (valor > maior) {
+                    maior = valor;
+                    jogador = i;
+                } else if (valor == maior) {
+                    jogadorDaVez = jogador;
+                    break;
+                }
+            }
+        }
+        jogadorDaVez = jogador;
+        return jogadorDaVez;
     }
 
     public void mostrarStatus(JogadorAbstrato jogador) {
@@ -177,7 +183,7 @@ public class Jogo {
             }
         }
 
-        return vencedor;
+        return false;
     }
 
     public void mostrarVencedor() {
