@@ -1,6 +1,8 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
 
 public class Jogo {
     private int tema;
@@ -86,16 +88,28 @@ public class Jogo {
                 System.out.println("VEZ DA MÁQUINA");
                 System.out.println("================================ \n");
                 atributoEscolhido = maquinaEscolheAtributo();
+                System.out.println("Atributo escolhido: " + Carta.getAtributos().get(atributoEscolhido));
 
             }
             vencedorDaVez = comparaCartas(atributoEscolhido);
-            roubaCarta(jogadorDaVez);
+            mostraAmbasCartas(jogador1, jogador2);
+            if (vencedorDaVez == 0) {
+                System.out.println("================================");
+                System.out.println("VITÓRIA DO JOGADOR");
+                System.out.println("================================ \n");
+            } else {
+                System.out.println("================================");
+                System.out.println("VITÓRIA DA MÁQUINA");
+                System.out.println("================================ \n");
+            }
+            roubaCarta(vencedorDaVez);
+            jogadorDaVez = vencedorDaVez;
         }
 
     }
 
-    public void roubaCarta(int jogadorDaVez) {
-        if (jogadorDaVez == 0) {
+    public void roubaCarta(int vencedorDaVez) {
+        if (vencedorDaVez == 0) {
 			jogadores[0].getMonte().addLast(jogadores[1].getMonte().pegarTopo());
 			jogadores[1].getMonte().removeFirst();
         } else {
@@ -120,7 +134,7 @@ public class Jogo {
 
         Random gerador = new Random();
         int atributoEscolhido = gerador.nextInt(4);
-        return 3; //atributoEscolhido;
+        return atributoEscolhido;
     }
 
     public static int comparaCartas(int atributo) {
@@ -136,13 +150,20 @@ public class Jogo {
                     maior = valor;
                     jogador = i;
                 } else if (valor == maior) {
-                    jogadorDaVez = jogador;
+                    vencedorDaVez = jogador;
                     break;
                 }
             }
         }
-        jogadorDaVez = jogador;
-        return jogadorDaVez;
+        vencedorDaVez = jogador;
+        return vencedorDaVez;
+    }
+
+    public void mostraAmbasCartas(JogadorAbstrato jogador1, JogadorAbstrato jogador2) {
+        System.out.println("Carta do jogador: ");
+        System.out.println( jogador1.getMonte().pegarTopo().toString());
+        System.out.println("Carta da máquina: ");
+        System.out.println( jogador2.getMonte().pegarTopo().toString());
     }
 
     public void mostrarStatus(JogadorAbstrato jogador) {
@@ -156,13 +177,6 @@ public class Jogo {
         System.out.println(jogador.getMonte().pegarTopo().toString());
         System.out.println("================================ ");
         rodada++;
-    }
-
-    public void mostrarJogadorDaVez() {
-        String jogadorDaVez = "a";
-        System.out.println("================================");
-        System.out.println("TURNO DO JOGADOR: " + jogadorDaVez);
-        System.out.println("================================ \n");
     }
 
     public static JogadorAbstrato[] getJogadores() {
