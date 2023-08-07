@@ -41,6 +41,7 @@ public class Baralho extends LinkedList<Carta> {
             String linha = leitorComBuffer.readLine();
 
             List<String> atributos = new ArrayList();
+            List<String> unidade = new ArrayList();
 
             String[] nomeAtributos = linha.split(",");
             for (String i : nomeAtributos) {
@@ -48,21 +49,23 @@ public class Baralho extends LinkedList<Carta> {
             }
             Carta.setAtributo(atributos);
 
-            linha = leitorComBuffer.readLine();
-            String[] valorAtributos = linha.split(",");
-            for (String i : valorAtributos) {
-                atributos.add(i);
-            }
-            Carta.setAtributo(atributos);
+            // linha = leitorComBuffer.readLine();
+            // String[] valorAtributos = linha.split(",");
+            // for (String i : valorAtributos) {
+            //     valores.add(i);
+            // }
+            // Carta.setAtributo(valores);
 
             linha = leitorComBuffer.readLine();
-            String[] medidaAtributos = linha.split(",");
-            for (String i : medidaAtributos) {
-                atributos.add(i);
+            String[] unidadeAtributos = linha.split(",");
+            for (String i : unidadeAtributos) {
+                unidade.add(i);
             }
-            Carta.setAtributo(atributos);
+            Carta.setUnidade(unidade);
 
             linha = leitorComBuffer.readLine();
+            linha = leitorComBuffer.readLine();
+
 
             while (linha != null) {
 

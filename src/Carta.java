@@ -1,7 +1,8 @@
 import java.util.List;
 
 public class Carta {
-    private static List<String> atributo;
+    private static List<String> atributos;
+    private static List<String> valor;
     private static List<String> unidade;
     private String nome;
     private String codigo;
@@ -10,10 +11,9 @@ public class Carta {
     private String dado3;
     private String dado4;
     private String curiosidade;
-    private String superTrunfo;
+    private String curiosidade2;
 
-    public Carta(String codigo, String nome, String dado1, String dado2, String dado3, String dado4, String curiosidade,
-            String superTrunfo) {
+    public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, String dado1, String dado2, String dado3, String dado4) {
 
         this.nome = nome;
         this.codigo = codigo;
@@ -21,20 +21,31 @@ public class Carta {
         this.dado2 = dado2;
         this.dado3 = dado3;
         this.dado4 = dado4;
-        this.curiosidade = curiosidade;
-        this.superTrunfo = superTrunfo;
+        this.curiosidade = curiosidade1;
+        this.curiosidade2 = curiosidade2;
     }
 
     public String toString() {
-        return "Código: " + codigo + " Nome: " + nome + " \nAtributo 1: " + getAtributo();
+        String textoNome = " ";
+        String textoDados = " ";
+        String textoFinal;
+        String[] dados1 = {dado1, dado2, dado3, dado4};
+
+        for (int i = 0; i < atributos.size(); i++) {
+            textoDados = textoDados + "\n" + atributos.get(i) + ": " + dados1[i] + " " + unidade.get(i);
+        }
+
+        textoNome = textoNome + "Nome: " + this.nome + "\nCódigo: " + this.codigo;
+        textoFinal = textoNome + textoDados;
+        return textoFinal;
     }
 
-    public static List<String> getAtributo() {
-        return atributo;
+    public static List<String> getAtributos() {
+        return atributos;
     }
 
     public static void setAtributo(List<String> atributos) {
-        Carta.atributo = atributos;
+        Carta.atributos = atributos;
     }
 
     public static List<String> getUnidade() {
@@ -43,6 +54,14 @@ public class Carta {
 
     public static void setUnidade(List<String> unidade) {
         Carta.unidade = unidade;
+    }
+
+    public static List<String> getValor() {
+        return valor;
+    }
+
+    public static void setValor(List<String> valor) {
+        Carta.valor = valor;
     }
 
 }
