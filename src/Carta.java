@@ -10,8 +10,9 @@ public class Carta {
     private Double dado2;
     private Double dado3;
     private Double dado4;
-    private String curiosidade;
+    private int dadoEscolhido;
     private String curiosidade2;
+    private Double[] dados2 = {dado1, dado2, dado3, dado4};
 
     public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, Double dado1, Double dado2, Double dado3, Double dado4) {
 
@@ -21,7 +22,6 @@ public class Carta {
         this.dado2 = dado2;
         this.dado3 = dado3;
         this.dado4 = dado4;
-        this.curiosidade = curiosidade1;
         this.curiosidade2 = curiosidade2;
     }
 
@@ -44,7 +44,7 @@ public class Carta {
         return atributos;
     }
 
-    public static void setAtributo(List<String> atributos) {
+    public static void setAtributos(List<String> atributos) {
         Carta.atributos = atributos;
     }
 
@@ -63,11 +63,18 @@ public class Carta {
 		this.valor = valor;
 	}
 
-    public Double getDado1() {
-        return dado1;
+    public double dadoEscolhido(int escolha) {
+
+        if (escolha == 1) {
+            return dado1;
+        } else if (escolha == 2) {
+            return dado2;
+        } else if (escolha == 3) {
+            return dado3;
+        } else {
+            return dado4;
+        }
+
     }
 
-    public void setDado1(Double dado1) {
-        this.dado1 = dado1;
-    }
 }

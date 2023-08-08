@@ -73,8 +73,8 @@ public class Jogo {
         int atributoEscolhido;
         int vencedorDaVez = 0;
         while (!existeVencedor()) {
-
-            mostrarStatus(jogador1);
+            rodada++;
+            mostrarStatus(jogador1, rodada);
 
             if (jogadorDaVez == 0) {
                 System.out.println("================================");
@@ -110,11 +110,11 @@ public class Jogo {
 
     public void roubaCarta(int vencedorDaVez) {
         if (vencedorDaVez == 0) {
-			jogadores[0].getMonte().addLast(jogadores[1].getMonte().pegarTopo());
-			jogadores[1].getMonte().removeFirst();
+            jogadores[0].getMonte().addLast(jogadores[1].getMonte().pegarTopo());
+            jogadores[1].getMonte().removeFirst();
         } else {
             jogadores[1].getMonte().addLast(jogadores[0].getMonte().pegarTopo());
-			jogadores[0].getMonte().removeFirst();
+            jogadores[0].getMonte().removeFirst();
         }
     }
 
@@ -127,7 +127,7 @@ public class Jogo {
         }
         System.out.println(texto + "\n");
         atributoEscolhido = scanner.nextInt();
-        return atributoEscolhido + 1;
+        return atributoEscolhido;
     }
 
     public int maquinaEscolheAtributo() {
@@ -141,8 +141,7 @@ public class Jogo {
         double maior = 0;
         int jogador = 0;
         for (int i = 0; i < jogadores.length; i++) {
-            double valor = Double.valueOf(jogadores[i].getMonte().pegarTopo().getDado1())
-                    .doubleValue();
+            double valor = Double.valueOf(jogadores[i].getMonte().pegarTopo().dadoEscolhido(atributo)).doubleValue();
             if (i == 0)
                 maior = valor;
             else {
@@ -161,13 +160,12 @@ public class Jogo {
 
     public void mostraAmbasCartas(JogadorAbstrato jogador1, JogadorAbstrato jogador2) {
         System.out.println("Carta do jogador: ");
-        System.out.println( jogador1.getMonte().pegarTopo().toString());
+        System.out.println(jogador1.getMonte().pegarTopo().toString());
         System.out.println("Carta da máquina: ");
-        System.out.println( jogador2.getMonte().pegarTopo().toString());
+        System.out.println(jogador2.getMonte().pegarTopo().toString());
     }
 
-    public void mostrarStatus(JogadorAbstrato jogador) {
-        int rodada = 1;
+    public void mostrarStatus(JogadorAbstrato jogador, int rodada) {
         System.out.println("================================");
         System.out.println("RODADA " + rodada);
         System.out.println("================================ ");
@@ -176,7 +174,6 @@ public class Jogo {
         System.out.println("SUA PRÓXIMA CARTA É: ");
         System.out.println(jogador.getMonte().pegarTopo().toString());
         System.out.println("================================ ");
-        rodada++;
     }
 
     public static JogadorAbstrato[] getJogadores() {

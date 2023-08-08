@@ -47,12 +47,12 @@ public class Baralho extends LinkedList<Carta> {
             for (String i : nomeAtributos) {
                 atributos.add(i);
             }
-            Carta.setAtributo(atributos);
+            Carta.setAtributos(atributos);
 
             // linha = leitorComBuffer.readLine();
             // String[] valorAtributos = linha.split(",");
             // for (String i : valorAtributos) {
-            //     valores.add(i);
+            // valores.add(i);
             // }
             // Carta.setAtributo(valores);
 
@@ -66,12 +66,16 @@ public class Baralho extends LinkedList<Carta> {
             linha = leitorComBuffer.readLine();
             linha = leitorComBuffer.readLine();
 
-
             while (linha != null) {
 
                 String[] dados = linha.split(",");
-                this.add(new Carta(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]), Double.parseDouble(dados[5]), Double.parseDouble(dados[6]), Double.parseDouble(dados[7])));
+                Carta carta = new Carta(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]),
+                        Double.parseDouble(dados[5]), Double.parseDouble(dados[6]), Double.parseDouble(dados[7]));
+
                 Atributo valor = new Atributo();
+                valor.setValor(atributos.subList(1, atributos.size()));
+                carta.setValor(valor);
+                this.add(carta);
                 linha = leitorComBuffer.readLine();
 
             }
@@ -113,13 +117,13 @@ public class Baralho extends LinkedList<Carta> {
 
     public Carta pegarTopo() {
 
-			return this.getFirst();
+        return this.getFirst();
 
-	}
+    }
 
     public void listarCartas() {
-		System.out.println(this);
-	}
+        System.out.println(this);
+    }
 
     public int getTema() {
         return tema;
