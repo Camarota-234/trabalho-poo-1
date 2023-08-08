@@ -1,6 +1,7 @@
 import java.util.List;
 
 public class Atributo {
+
 	private List<String> valor;
 
 	public Atributo(){}

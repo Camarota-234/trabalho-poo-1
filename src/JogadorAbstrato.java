@@ -6,16 +6,20 @@ public abstract class JogadorAbstrato {
         this.nome = nome;
     }
 
-    public void setMonte(Baralho monte) {
-        this.monte = monte;
-    }
-
     public Baralho getMonte() {
         return this.monte;
     }
 
-    public abstract boolean vencedorPartida();
+    public void setMonte(Baralho monte) {
+        this.monte = monte;
+    }
 
-    public abstract String toString();
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
 }

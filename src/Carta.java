@@ -10,9 +10,6 @@ public class Carta {
     private Double dado2;
     private Double dado3;
     private Double dado4;
-    private int dadoEscolhido;
-    private String curiosidade2;
-    private Double[] dados2 = {dado1, dado2, dado3, dado4};
 
     public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, Double dado1, Double dado2, Double dado3, Double dado4) {
 
@@ -22,7 +19,6 @@ public class Carta {
         this.dado2 = dado2;
         this.dado3 = dado3;
         this.dado4 = dado4;
-        this.curiosidade2 = curiosidade2;
     }
 
     public String toString() {

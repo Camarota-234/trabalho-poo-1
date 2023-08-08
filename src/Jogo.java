@@ -98,14 +98,12 @@ public class Jogo {
                 System.out.println("================================ \n");
                 System.out.println("Escolha um atributo: ");
                 atributoEscolhido = escolherAtributo();
-
             } else {
                 System.out.println("================================");
                 System.out.println("VEZ DA MÁQUINA");
                 System.out.println("================================ \n");
                 atributoEscolhido = maquinaEscolheAtributo();
                 System.out.println("Atributo escolhido: " + Carta.getAtributos().get(atributoEscolhido));
-
             }
 
             //Comparação das cartas em função de atributo escolhido
@@ -132,7 +130,6 @@ public class Jogo {
             //transforma vencedor no proximo jogador
             jogadorDaVez = vencedorDaVez;
         }
-
     }
 
     // Função que mostra a rodada, quantas cartas o jogador real tem e qual a
