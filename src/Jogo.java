@@ -1,12 +1,8 @@
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
 
 public class Jogo {
     private int tema;
-    private int totalJogadores;
     private static JogadorAbstrato[] jogadores = new JogadorAbstrato[2];
     private static int jogadorDaVez;
     private static int vencedorDaVez;
@@ -14,8 +10,6 @@ public class Jogo {
     public Jogo(int tema) {
 
         this.tema = tema;
-
-        Scanner scanner = new Scanner(System.in);
 
         // Switch para mostrar tema que foi carregado ou encerrar programa (MELHORAR
         // CÓDIGO)

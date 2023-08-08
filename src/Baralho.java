@@ -14,7 +14,6 @@ public class Baralho extends LinkedList<Carta> {
 
     private ArrayList<Carta> cartas;
     private int tema;
-    private boolean ehTrunfo;
 
     public Baralho(int tema) {
         this.setTema(tema);
@@ -49,13 +48,6 @@ public class Baralho extends LinkedList<Carta> {
                 atributos.add(i);
             }
             Carta.setAtributos(atributos);
-
-            // linha = leitorComBuffer.readLine();
-            // String[] valorAtributos = linha.split(",");
-            // for (String i : valorAtributos) {
-            // valores.add(i);
-            // }
-            // Carta.setAtributo(valores);
 
             linha = leitorComBuffer.readLine();
             String[] unidadeAtributos = linha.split(",");

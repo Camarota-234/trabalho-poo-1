@@ -1,6 +1,4 @@
 import java.util.List;
-import java.io.*;
-import java.lang.*;
 
 public class Carta {
     private static List<String> atributos;

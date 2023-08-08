@@ -1,6 +1,5 @@
 public class JogadorRandomico extends JogadorAbstrato {
     private Baralho monte;
-    private String nome;
 
     public JogadorRandomico(String nome) {
         super(nome);
