@@ -124,7 +124,8 @@ public class Jogo {
                 System.out.println("================================ \n");
             }
 
-            //Vencedor da última rodada ganha a carta jogada pelo jogador oponente
+            //Vencedor da última rodada ganha a carta jogada pelo jogador oponente e
+            //joga primeira carta para fundo do monte
             roubaCarta(vencedorDaVez);
 
             //transforma vencedor no proximo jogador
@@ -198,13 +199,18 @@ public class Jogo {
     }
 
     //Recebe uma cópia da carta do topo do monste do jogador oposto e retira original do jogo
+    //MELHORAR CÓDIGO
     public void roubaCarta(int vencedorDaVez) {
         if (vencedorDaVez == 0) {
             jogadores[0].getMonte().addLast(jogadores[1].getMonte().pegarTopo());
             jogadores[1].getMonte().removeFirst();
+            jogadores[0].getMonte().addLast(jogadores[0].getMonte().pegarTopo());
+            jogadores[0].getMonte().removeFirst();
         } else {
             jogadores[1].getMonte().addLast(jogadores[0].getMonte().pegarTopo());
             jogadores[0].getMonte().removeFirst();
+            jogadores[1].getMonte().addLast(jogadores[1].getMonte().pegarTopo());
+            jogadores[1].getMonte().removeFirst();
         }
     }
 

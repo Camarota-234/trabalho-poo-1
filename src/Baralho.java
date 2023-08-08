@@ -14,6 +14,7 @@ public class Baralho extends LinkedList<Carta> {
 
     private ArrayList<Carta> cartas;
     private int tema;
+    private boolean ehTrunfo;
 
     public Baralho(int tema) {
         this.setTema(tema);
@@ -69,8 +70,10 @@ public class Baralho extends LinkedList<Carta> {
             while (linha != null) {
 
                 String[] dados = linha.split(",");
+
                 Carta carta = new Carta(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]),
-                        Double.parseDouble(dados[5]), Double.parseDouble(dados[6]), Double.parseDouble(dados[7]));
+                        Double.parseDouble(dados[5]), Double.parseDouble(dados[6]), Double.parseDouble(dados[7]),
+                        dados[8]);
 
                 Atributo valor = new Atributo();
                 valor.setValor(atributos.subList(1, atributos.size()));
@@ -92,7 +95,6 @@ public class Baralho extends LinkedList<Carta> {
                 e.printStackTrace();
             }
         }
-
     }
 
     public void embaralhar() {
