@@ -179,7 +179,7 @@ public class Jogo {
 
         switch (jogadorTrunfo) {
             case 1:
-                System.out.println("\n" +  "Jogador real com carta TRUNFO");
+                System.out.println("\n" + "Jogador real com carta TRUNFO");
                 if (jogadores[1].getMonte().pegarTopo().ehGrupoA()) {
                     System.out.println("Carta do jogador randomico é do grupo A. Jogo segue normalmente.");
                 } else {
@@ -189,7 +189,7 @@ public class Jogo {
                 break;
 
             case 2:
-                System.out.println("\n" +  "Jogador randomico com carta TRUNFO");
+                System.out.println("\n" + "Jogador randomico com carta TRUNFO");
                 if (jogadores[0].getMonte().pegarTopo().ehGrupoA()) {
                     System.out.println("Carta do jogador real é do grupo A. Jogo segue normalmente.");
                 } else {
@@ -254,12 +254,11 @@ public class Jogo {
 
         for (int i = 0; i < jogadores.length; i++) {
             if (jogadores[i].getMonte().size() == 32) {
-                if ( i == 0 ) {
+                if (i == 0) {
                     System.out.println("O JOGADOR REAL GANHOU");
                 } else {
                     System.out.println("O JOGADOR RANDOMICO GANHOU");
                 }
-
             }
         }
         return false;
