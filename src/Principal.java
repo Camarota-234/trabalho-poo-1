@@ -13,6 +13,7 @@ public class Principal {
             Scanner scanner = new Scanner(System.in);
             tema = scanner.nextInt();
             Jogo jogo = new Jogo(tema);
+            tema = 4;
         } while (tema != 4);
         System.out.println("\n[ PROGRAMA ENCERRADO ]");
         System.exit(0);

@@ -100,14 +100,14 @@ public class Jogo {
                 System.out.println("Atributo escolhido: " + Carta.getAtributos().get(atributoEscolhido));
             }
 
-            //Comparação das cartas em função de atributo escolhido
-            //Vencedor da vez escolherá os atributos na próxima rodada
+            // Comparação das cartas em função de atributo escolhido
+            // Vencedor da vez escolherá os atributos na próxima rodada
             vencedorDaVez = comparaCartas(atributoEscolhido);
 
-            //Mostra cartas usadas na rodada
+            // Mostra cartas usadas na rodada
             mostraAmbasCartas(jogador1, jogador2);
 
-            //Mostra vencedor da rodada
+            // Mostra vencedor da rodada
             if (vencedorDaVez == 0) {
                 System.out.println("================================");
                 System.out.println("VITÓRIA DO JOGADOR");
@@ -118,11 +118,11 @@ public class Jogo {
                 System.out.println("================================ \n");
             }
 
-            //Vencedor da última rodada ganha a carta jogada pelo jogador oponente e
-            //joga primeira carta para fundo do monte
+            // Vencedor da última rodada ganha a carta jogada pelo jogador oponente e
+            // joga primeira carta para fundo do monte
             roubaCarta(vencedorDaVez);
 
-            //transforma vencedor no proximo jogador
+            // transforma vencedor no proximo jogador
             jogadorDaVez = vencedorDaVez;
         }
     }
@@ -161,12 +161,50 @@ public class Jogo {
         return atributoEscolhido;
     }
 
-    //Compara a carta do topo de cada jogador e retorna o número do jogador ganhador, que já será
-    //Usado para determinar quem joga a próxima rodada
-    public static int comparaCartas(int atributo) {
+    // Compara a carta do topo de cada jogador e retorna o número do jogador
+    // ganhador, que já será
+    // Usado para determinar quem joga a próxima rodada
+    public int comparaCartas(int atributo) {
         double maior = 0;
         int jogador = 0;
+        int jogadorTrunfo = 0;
+        int outra;
+
         for (int i = 0; i < jogadores.length; i++) {
+            boolean temTrunfo = jogadores[i].getMonte().pegarTopo().ehTrunfo();
+            if (temTrunfo) {
+                jogadorTrunfo = i + 1;
+            }
+        }
+
+        switch (jogadorTrunfo) {
+            case 1:
+                System.out.println("\n" +  "Jogador real com carta TRUNFO");
+                if (jogadores[1].getMonte().pegarTopo().ehGrupoA()) {
+                    System.out.println("Carta do jogador randomico é do grupo A. Jogo segue normalmente.");
+                } else {
+                    System.out.println("Carta TRUNFO vence!\n");
+                    return 0;
+                }
+                break;
+
+            case 2:
+                System.out.println("\n" +  "Jogador randomico com carta TRUNFO");
+                if (jogadores[0].getMonte().pegarTopo().ehGrupoA()) {
+                    System.out.println("Carta do jogador real é do grupo A. Jogo segue normalmente.");
+                } else {
+                    System.out.println("Carta TRUNFO vence!\n");
+                    return 1;
+                }
+                break;
+
+            default:
+                System.out.println("\n" + "Nenhum jogador com carta TRUNFO\n");
+                break;
+        }
+
+        for (int i = 0; i < jogadores.length; i++) {
+
             double valor = Double.valueOf(jogadores[i].getMonte().pegarTopo().dadoEscolhido(atributo)).doubleValue();
             if (i == 0)
                 maior = valor;
@@ -184,7 +222,7 @@ public class Jogo {
         return vencedorDaVez;
     }
 
-    //Imprime dados das cartas de todos os jogadores
+    // Imprime dados das cartas de todos os jogadores
     public void mostraAmbasCartas(JogadorAbstrato jogador1, JogadorAbstrato jogador2) {
         System.out.println("Carta do jogador: ");
         System.out.println(jogador1.getMonte().pegarTopo().toString());
@@ -192,8 +230,9 @@ public class Jogo {
         System.out.println(jogador2.getMonte().pegarTopo().toString());
     }
 
-    //Recebe uma cópia da carta do topo do monste do jogador oposto e retira original do jogo
-    //MELHORAR CÓDIGO
+    // Recebe uma cópia da carta do topo do monste do jogador oposto e retira
+    // original do jogo
+    // MELHORAR CÓDIGO
     public void roubaCarta(int vencedorDaVez) {
         if (vencedorDaVez == 0) {
             jogadores[0].getMonte().addLast(jogadores[1].getMonte().pegarTopo());
@@ -208,13 +247,19 @@ public class Jogo {
         }
     }
 
-    //Quando um jogador completa 32 cartas em seu baralho, imprime vencedor e retorna falso
-    //para sair do loop do jogo
+    // Quando um jogador completa 32 cartas em seu baralho, imprime vencedor e
+    // retorna falso
+    // para sair do loop do jogo
     public static boolean existeVencedor() {
 
         for (int i = 0; i < jogadores.length; i++) {
             if (jogadores[i].getMonte().size() == 32) {
-                System.out.println("O JOGADOR " + i + " GANHOU");
+                if ( i == 0 ) {
+                    System.out.println("O JOGADOR REAL GANHOU");
+                } else {
+                    System.out.println("O JOGADOR RANDOMICO GANHOU");
+                }
+
             }
         }
         return false;
@@ -224,7 +269,6 @@ public class Jogo {
         System.out.println("Mostrar Vencedor");
     }
 
-
     public static JogadorAbstrato[] getJogadores() {
         return Jogo.jogadores;
     }
@@ -232,9 +276,5 @@ public class Jogo {
     public static void setJogadores(JogadorAbstrato[] jogadores) {
         Jogo.jogadores = jogadores;
     }
-
-
-
-
 
 }
