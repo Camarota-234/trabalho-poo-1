@@ -10,6 +10,7 @@ public class Carta {
     private Double dado2;
     private Double dado3;
     private Double dado4;
+    private String curiosidade;
     private String trunfo;
 
     public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, Double dado1, Double dado2,
@@ -23,6 +24,18 @@ public class Carta {
         this.dado4 = dado4;
         this.trunfo = trunfo;
     }
+    // public Carta(String codigo, String nome, Double dado1, Double dado2,
+    //         Double dado3, Double dado4, String curiosidade, String trunfo) {
+
+    //     this.nome = nome;
+    //     this.codigo = codigo;
+    //     this.dado1 = dado1;
+    //     this.dado2 = dado2;
+    //     this.dado3 = dado3;
+    //     this.dado4 = dado4;
+    //     this.curiosidade = curiosidade;
+    //     this.trunfo = trunfo;
+    // }
 
     public String toString() {
         String textoNome = "";

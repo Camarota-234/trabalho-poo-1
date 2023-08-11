@@ -59,7 +59,7 @@ public class Jogo {
         System.out.println("PARTIDA INICIADA");
         System.out.println("================================ \n");
         jogador1.getMonte().listarCartas();
-        jogador2.getMonte().listarCartas();
+        //jogador2.getMonte().listarCartas();
 
         // Função com jogo em loop
         jogar(jogador1, jogador2);

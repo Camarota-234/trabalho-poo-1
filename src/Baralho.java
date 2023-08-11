@@ -57,7 +57,6 @@ public class Baralho extends LinkedList<Carta> {
             Carta.setUnidade(unidade);
 
             linha = leitorComBuffer.readLine();
-            linha = leitorComBuffer.readLine();
 
             while (linha != null) {
 
@@ -66,6 +65,8 @@ public class Baralho extends LinkedList<Carta> {
                 Carta carta = new Carta(dados[0], dados[1], dados[2], dados[3], Double.parseDouble(dados[4]),
                         Double.parseDouble(dados[5]), Double.parseDouble(dados[6]), Double.parseDouble(dados[7]),
                         dados[8]);
+                //Carta carta = new Carta(dados[0], dados[1], Double.parseDouble(dados[2]),
+                //        Double.parseDouble(dados[3]), Double.parseDouble(dados[4]), Double.parseDouble(dados[5]), dados[6], dados[7]);
 
                 Atributo valor = new Atributo();
                 valor.setValor(atributos.subList(1, atributos.size()));
