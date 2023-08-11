@@ -12,6 +12,7 @@ public class Carta {
     private Double dado4;
     private String curiosidade;
     private String trunfo;
+    private boolean ehTrunfo;
 
     public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, Double dado1, Double dado2,
             Double dado3, Double dado4, String trunfo) {
@@ -40,8 +41,8 @@ public class Carta {
     public String toString() {
         String textoNome = "";
         String textoDados = "";
-        String textoFinal;
         String textoTrunfo = "";
+        String textoFinal;
         Double[] dados1 = { dado1, dado2, dado3, dado4 };
         boolean ehtrunfo = trunfo.contains("true");
 
@@ -55,12 +56,21 @@ public class Carta {
 
         //Cria texto se carta for super trunfo
         if (ehtrunfo == true) {
+            setTrunfo(ehtrunfo);
             textoTrunfo = textoTrunfo +  "\n" + "SUPER TRUNFO\n";
         }
 
         textoFinal = textoNome + textoDados + textoTrunfo;
 
         return textoFinal + "\n";
+    }
+
+    public boolean ehGrupoA() {
+        if (codigo.contains("A")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public double dadoEscolhido(int escolha) {
@@ -116,12 +126,12 @@ public class Carta {
         this.codigo = codigo;
     }
 
-    // public boolean isTrunfo() {
-    // return trunfo;
-    // }
+    public boolean ehTrunfo() {
+      return ehTrunfo;
+    }
 
-    // public void setTrunfo(boolean trunfo) {
-    // this.trunfo = trunfo;
-    // }
+    public void setTrunfo(boolean ehTrunfo) {
+      this.ehTrunfo = ehTrunfo;
+    }
 
 }
