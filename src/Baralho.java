@@ -42,7 +42,7 @@ public class Baralho extends LinkedList<Carta> {
                 fluxo = new FileInputStream("carros.csv");
                 break;
             case 3:
-                fluxo = new FileInputStream("cartas.csv");
+                fluxo = new FileInputStream("dinos.csv");
                 break;
             }
 

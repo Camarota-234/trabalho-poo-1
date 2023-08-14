@@ -53,7 +53,7 @@ public class Carta {
         for (int i = 0; i < atributos.size(); i++) {
             textoDados = textoDados + "\n" + atributos.get(i) + ": " + dados1[i] + " " + unidade.get(i);
         }
-        textoDados = textoDados + "\nCuriosidade:" + curiosidade;
+        textoDados = textoDados + "\nCuriosidade: " + curiosidade;
 
         //Cria texto se carta for super trunfo
         if (ehtrunfo == true) {
