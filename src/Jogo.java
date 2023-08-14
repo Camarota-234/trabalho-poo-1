@@ -15,7 +15,7 @@ public class Jogo {
         // CÓDIGO)
         switch (tema) {
             case 1:
-                System.out.println("Baralho carregado com tema Personalidades histórias");
+                System.out.println("Baralho carregado com tema Artistas");
                 break;
             case 2:
                 System.out.println("Baralho carregado com tema Carros");
@@ -24,7 +24,11 @@ public class Jogo {
                 System.out.println("Baralho carregado com tema Dinossauros");
                 break;
             case 4:
+                System.out.println("Baralho carregado com tema Jogadores");
+            case 5:
                 System.out.println("OK");
+                System.out.println("\n[ PROGRAMA ENCERRADO ]");
+                System.exit(0);
                 break;
             default:
                 System.out.println("Esta não é uma opção válida");
@@ -59,7 +63,7 @@ public class Jogo {
         System.out.println("PARTIDA INICIADA");
         System.out.println("================================ \n");
         jogador1.getMonte().listarCartas();
-        //jogador2.getMonte().listarCartas();
+        // jogador2.getMonte().listarCartas();
 
         // Função com jogo em loop
         jogar(jogador1, jogador2);
@@ -92,7 +96,6 @@ public class Jogo {
                 System.out.println("================================ \n");
                 System.out.println("Escolha um atributo: ");
                 atributoEscolhido = escolherAtributo();
-                System.out.println("Atributo escolhido: " + Carta.getAtributos().get(atributoEscolhido));
             } else {
                 System.out.println("================================");
                 System.out.println("VEZ DA MÁQUINA");
@@ -146,12 +149,24 @@ public class Jogo {
     public int escolherAtributo() {
         int atributoEscolhido;
         String texto = " ";
-        Scanner scanner = new Scanner(System.in);
+
         for (int i = 0; i < 4; i++) {
             texto = texto + "[" + (i + 1) + "] " + Carta.getAtributos().get(i) + "\n";
         }
         System.out.println(texto + "\n");
-        atributoEscolhido = scanner.nextInt();
+        atributoEscolhido = 1;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            atributoEscolhido = scanner.nextInt();
+
+            System.out.println("Atributo escolhido: " + Carta.getAtributos().get(atributoEscolhido - 1));
+        } catch (IndexOutOfBoundsException nErrado) {
+            System.out.println("O número de atributo inválido, tente novamente.");
+            escolherAtributo();
+        } catch (java.util.InputMismatchException textoErrado) {
+            System.out.println("Por favor digite apenas o número do atributo escolhido, tente novamente.");
+            escolherAtributo();
+        }
         return atributoEscolhido;
     }
 
