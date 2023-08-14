@@ -6,7 +6,7 @@ public class Principal {
         do {
             System.out.println("Bem vindo ao jogo Super Trunfo!");
             System.out.println("================================");
-            System.out.println("Escolha o tema:\n (1) Personalidades históricas \n (2) Motos \n (3) Dinossauros");
+            System.out.println("Escolha o tema:\n (1) Personalidades históricas \n (2) Carros \n (3) Dinossauros");
             System.out.println("Ou digite (4) para sair");
             System.out.println("");
 

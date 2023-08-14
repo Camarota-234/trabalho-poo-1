@@ -18,7 +18,7 @@ public class Jogo {
                 System.out.println("Baralho carregado com tema Personalidades histórias");
                 break;
             case 2:
-                System.out.println("Baralho carregado com tema Motos");
+                System.out.println("Baralho carregado com tema Carros");
                 break;
             case 3:
                 System.out.println("Baralho carregado com tema Dinossauros");
@@ -35,7 +35,7 @@ public class Jogo {
 
         // Criando baralho, carregando todas as cartas e embaralhando
         Baralho superTrunfo = new Baralho(tema);
-        superTrunfo.Carregar();
+        superTrunfo.Carregar(tema);
         superTrunfo.embaralhar();
 
         System.out.println("================================");
@@ -92,6 +92,7 @@ public class Jogo {
                 System.out.println("================================ \n");
                 System.out.println("Escolha um atributo: ");
                 atributoEscolhido = escolherAtributo();
+                System.out.println("Atributo escolhido: " + Carta.getAtributos().get(atributoEscolhido));
             } else {
                 System.out.println("================================");
                 System.out.println("VEZ DA MÁQUINA");

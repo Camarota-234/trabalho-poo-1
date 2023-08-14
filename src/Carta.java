@@ -14,19 +14,8 @@ public class Carta {
     private String trunfo;
     private boolean ehTrunfo;
 
-    public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, Double dado1, Double dado2,
-            Double dado3, Double dado4, String trunfo) {
-
-        this.nome = nome;
-        this.codigo = codigo;
-        this.dado1 = dado1;
-        this.dado2 = dado2;
-        this.dado3 = dado3;
-        this.dado4 = dado4;
-        this.trunfo = trunfo;
-    }
-    // public Carta(String codigo, String nome, Double dado1, Double dado2,
-    //         Double dado3, Double dado4, String curiosidade, String trunfo) {
+    // public Carta(String codigo, String nome, String curiosidade1, String curiosidade2, Double dado1, Double dado2,
+    //         Double dado3, Double dado4, String trunfo) {
 
     //     this.nome = nome;
     //     this.codigo = codigo;
@@ -34,9 +23,20 @@ public class Carta {
     //     this.dado2 = dado2;
     //     this.dado3 = dado3;
     //     this.dado4 = dado4;
-    //     this.curiosidade = curiosidade;
     //     this.trunfo = trunfo;
     // }
+     public Carta(String codigo, String nome, Double dado1, Double dado2,
+             Double dado3, Double dado4, String curiosidade, String trunfo) {
+
+         this.nome = nome;
+         this.codigo = codigo;
+         this.dado1 = dado1;
+         this.dado2 = dado2;
+         this.dado3 = dado3;
+         this.dado4 = dado4;
+         this.curiosidade = curiosidade;
+         this.trunfo = trunfo;
+     }
 
     public String toString() {
         String textoNome = "";
@@ -47,12 +47,13 @@ public class Carta {
         boolean ehtrunfo = trunfo.contains("true");
 
         //Cria texto com nome e código
-        textoNome = textoNome + "Nome: " + this.nome + "\nCódigo: " + this.codigo;
+        textoNome = textoNome + "Nome: " + this.nome + "\nCodigo: " + this.codigo;
 
         //Cria texto com atributos e valores
         for (int i = 0; i < atributos.size(); i++) {
             textoDados = textoDados + "\n" + atributos.get(i) + ": " + dados1[i] + " " + unidade.get(i);
         }
+        textoDados = textoDados + "\nCuriosidade:" + curiosidade;
 
         //Cria texto se carta for super trunfo
         if (ehtrunfo == true) {
