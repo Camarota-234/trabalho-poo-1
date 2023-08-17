@@ -2,7 +2,8 @@
 
 ## Código para entrega de trabalho final de POO
 
-Código feito pelos alunos João Dinísio, João Guilherme Camarota, Nicholas Kenzo e William Iabagata.
+Código feito pelos alunos Igor Barbosa, João Dinísio Neto, João Guilherme Camarota, 
+Nicholas Kenzo e William Iabagata.
 
 ### Projeto em Java: Jogo Super Trunfo
 
