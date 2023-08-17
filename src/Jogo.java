@@ -15,7 +15,7 @@ public class Jogo {
         // CÓDIGO)
         switch (tema) {
             case 1:
-                System.out.println("Baralho carregado com tema Artistas");
+                System.out.println("Baralho carregado com tema Deuses");
                 break;
             case 2:
                 System.out.println("Baralho carregado com tema Carros");

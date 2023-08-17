@@ -36,7 +36,7 @@ public class Baralho extends LinkedList<Carta> {
         try {
             switch (tema) {
                 case 1:
-                fluxo = new FileInputStream("artistas.csv");
+                fluxo = new FileInputStream("deuses.csv");
                 break;
             case 2:
                 fluxo = new FileInputStream("carros.csv");
