@@ -25,6 +25,7 @@ public class Jogo {
                 break;
             case 4:
                 System.out.println("Baralho carregado com tema Jogadores");
+                break;
             case 5:
                 System.out.println("OK");
                 System.out.println("\n[ PROGRAMA ENCERRADO ]");
