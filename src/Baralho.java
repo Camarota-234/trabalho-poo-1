@@ -36,7 +36,7 @@ public class Baralho extends LinkedList<Carta> {
         try {
             switch (tema) {
                 case 1:
-                fluxo = new FileInputStream("cartas.csv");
+                fluxo = new FileInputStream("deuses.csv");
                 break;
             case 2:
                 fluxo = new FileInputStream("carros.csv");
@@ -44,6 +44,8 @@ public class Baralho extends LinkedList<Carta> {
             case 3:
                 fluxo = new FileInputStream("dinos.csv");
                 break;
+            case 4:
+                fluxo = new FileInputStream("jogadores.csv");
             }
 
             leitor = new InputStreamReader(fluxo);
@@ -142,5 +144,15 @@ public class Baralho extends LinkedList<Carta> {
     public int contagemCartas() {
         return this.size();
     }
+
+    public ArrayList<Carta> getCartas() {
+        return cartas;
+    }
+
+    public void setCartas(ArrayList<Carta> cartas) {
+        this.cartas = cartas;
+    }
+
+
 
 }
