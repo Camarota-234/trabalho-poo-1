@@ -36,16 +36,16 @@ public class Baralho extends LinkedList<Carta> {
         try {
             switch (tema) {
                 case 1:
-                fluxo = new FileInputStream("deuses.csv");
-                break;
-            case 2:
-                fluxo = new FileInputStream("carros.csv");
-                break;
-            case 3:
-                fluxo = new FileInputStream("dinos.csv");
-                break;
-            case 4:
-                fluxo = new FileInputStream("jogadores.csv");
+                    fluxo = new FileInputStream("deuses.csv");
+                    break;
+                case 2:
+                    fluxo = new FileInputStream("carros.csv");
+                    break;
+                case 3:
+                    fluxo = new FileInputStream("dinos.csv");
+                    break;
+                case 4:
+                    fluxo = new FileInputStream("jogadores.csv");
             }
 
             leitor = new InputStreamReader(fluxo);
@@ -76,7 +76,8 @@ public class Baralho extends LinkedList<Carta> {
                 String[] dados = linha.split(",");
 
                 Carta carta = new Carta(dados[0], dados[1], Double.parseDouble(dados[2]),
-                        Double.parseDouble(dados[3]), Double.parseDouble(dados[4]), Double.parseDouble(dados[5]), dados[6], dados[7]);
+                        Double.parseDouble(dados[3]), Double.parseDouble(dados[4]), Double.parseDouble(dados[5]),
+                        dados[6], dados[7]);
 
                 Atributo valor = new Atributo();
                 valor.setValor(atributos.subList(1, atributos.size()));
@@ -121,9 +122,7 @@ public class Baralho extends LinkedList<Carta> {
     }
 
     public Carta pegarTopo() {
-
         return this.getFirst();
-
     }
 
     public void listarCartas() {
