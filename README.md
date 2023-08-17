@@ -1,6 +1,8 @@
-# trabalho-poo
+# trabalho-poo SUPER TRUNFO
 
 ## Código para entrega de trabalho final de POO
+
+Código feito pelos alunos João Dinísio, João Guilherme Camarota, Nicholas Kenzo e William Iabagata.
 
 ### Projeto em Java: Jogo Super Trunfo
 
