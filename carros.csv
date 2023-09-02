@@ -1,34 +1,34 @@
 Potencia,Velocidade maxima,Preco em R$,Unidades vendidas
 cv,km/h,R$,Unidades
-1A,Bugatti Chiron Super Sport 300+,1600,490,57000000,30,Foi o primeiro carro a ultrapassar os 300 mph (483 km/h),false
-2A,Ferrari SF90 Stradale,1000,340,6000000,1, Foi o primeiro carro híbrido da Ferrari,false
-3A,Porsche 911 Turbo S,650,330,1329000,1000000,Originalmente seria chamado de Porsche 901, mas teve que mudar o nome por causa dos direitos da Peugeot,false
-4A,DeLorean DMC-12,130,209,25000,9000,Foi transformado em uma maquina do tempo na trilogia De Volta para o Futuro,false
-5A,Polo GTS,151,207,113060,4000,Considerado pelos mais sabios o carro mais pica de todos,false
-6A,Ford Mustang,480,250,315900,61000,E considerado o carro mais famoso dos cinemas, tendo aparecido em mais de 500 filmes,false
-7A,BMC Mini,76,160,3000,5000000,Ele foi o carro preferido dos Beatles e do Mr Bean,false
-8A,Lamborghini Miura,385,280,20000,764,Este carro foi batizado em homenagem a uma raça de touros bravos,false
-1B,Rolls-Royce Phantom,571,250,4000000,1000,E considerado por muitos o carro mais luxuoso do mundo,false
-2B,Volkswagen Kombi,80,130,50000,12500000,O ultimo exemplar da Kombi fabricado no Brasil foi enviado para um museu na Alemanha,false
-3B,Cadillac Eldorado,400,210,117600,500000,Foi usado por usado por celebridades como Elvis Presley e Marilyn Monroe,false
-4B,Volkswagen Fusca,46,130,10000,21000000,Foi o primeiro carro fabricado pela Volkswagen e o mais vendido do mundo ate ser superado pelo Toyota Corolla em 1997,true
-5B,Aston Martin DB5,325,230,6400000,1059,Ficou famoso por ser o carro usado pelo espião James Bond nos filmes da franquia 007,false
-6B,Civic Type R,310,272,429900,200000,E conhecido como a verção Radical do Civic,false
-7B,Toyota Supra,340,250,424900,8771,Is that a supra?!?,false
-8B,Renault Sandero RS,150,200,69690,1000,A sigla RS significa Renault Sport,false
-1C,Toyota Corolla,154,199,143390,50000000,Se tornou o carro mais vendido da historia em 1997,false
-2C,Ford modelo T,20,75,850,24600,15000000,Foi o primeiro carro produzido em serie pela Ford,false
-3C,Ferrari 250 GTO,385,280,202000000,36,Foi o primeiro carro do mundo com motor central-traseiro,false
-4C,Citroën DS,141,189,40000,1400000,Foi o primeiro carro com suspensão hidropneumatica auto-nivelante e farois direcionais,false
-5C,Pontiac GTO,360,230,200000,500000,O GTO teve tres gerações sendo a primeira a mais famosa e desejada pelos colecionadores,false
-6C,Koenigsegg Agera RS,1160,447,2700000,25,O Agera RS foi o carro mais rapido do mundo ate ser superado pelo Chiron em 2019,false
-7C,McLaren P1,916,350,1150000,375,A McLaren P1 teve uma produção limitada a apenas 375 unidades Todas foram vendidas antes do lançamento oficial do carro,false
-8C,Hennessey Venom GT,1244,435,1200000,13,O Hennessey Venom GT teve uma versão conversível chamada Spyder que foi inspirada pelo cantor Steven Tylerda banda Aerosmith,false
-1D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central,false
-2D,Hyundai HB20,130,190,55900,1057000,Carro muito popular entre garotas que cursam odontologia e pintam o cabelo de loiro.,false
-3D,Ford F-150,405,193,479900,534827,Alguns modelos vem com uma pequena geladera no console central,false
-4D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central,false
-5D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central,false
-6D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central,false
-7D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central,false
-8D,Gol bolinha,145,191,17950,990000,Alguns modelos vem com uma pequena geladera no console central,false
+1A,Bugatti Chiron Super Sport 300+,1600,490,57000000,30,Foi o primeiro carro a ultrapassar os 300 mph. (483 km/h).,false
+2A,Ferrari SF90 Stradale,1000,340,6000000,1, Foi o primeiro carro híbrido da Ferrari.,false
+3A,Porsche 911 Turbo S,650,330,1329000,1000000,Originalmente seria chamado de Porsche 901, mas teve que mudar o nome por causa dos direitos da Peugeot.,false
+4A,DeLorean DMC-12,130,209,25000,9000,Foi transformado em uma maquina do tempo na trilogia De Volta para o Futuro.,false
+5A,Polo GTS,151,207,113060,4000,Considerado pelos mais sabios o carro mais pica de todos.,false
+6A,Ford Mustang,480,250,315900,61000,E considerado o carro mais famoso dos cinemas, tendo aparecido em mais de 500 filmes..,false
+7A,BMC Mini,76,160,3000,5000000,Ele foi o carro preferido dos Beatles e do Mr Bean.,false
+8A,Lamborghini Miura,385,280,20000,764,Este carro foi batizado em homenagem a uma raça de touros bravos.,false
+1B,Rolls-Royce Phantom,571,250,4000000,1000,E considerado por muitos o carro mais luxuoso do mundo.,false
+2B,Volkswagen Kombi,80,130,50000,12500000,O ultimo exemplar da Kombi fabricado no Brasil foi enviado para um museu na Alemanha.,false
+3B,Cadillac Eldorado,400,210,117600,500000,Foi usado por usado por celebridades como Elvis Presley e Marilyn Monroe.,false
+4B,Volkswagen Fusca,46,130,10000,21000000,Foi o primeiro carro fabricado pela Volkswagen e o mais vendido do mundo ate ser superado pelo Toyota Corolla em 1997.,true
+5B,Aston Martin DB5,325,230,6400000,1059,Ficou famoso por ser o carro usado pelo espião James Bond nos filmes da franquia 007.,false
+6B,Civic Type R,310,272,429900,200000,E conhecido como a verção Radical do Civic.,false
+7B,Toyota Supra,340,250,424900,8771,Is that a supra?!?.,false
+8B,Renault Sandero RS,150,200,69690,1000,A sigla RS significa Renault Sport.,false
+1C,Toyota Corolla,154,199,143390,50000000,Se tornou o carro mais vendido da historia em 1997.,false
+2C,Ford modelo T,20,75,850,24600,15000000,Foi o primeiro carro produzido em serie pela Ford.,false
+3C,Ferrari 250 GTO,385,280,202000000,36,Foi o primeiro carro do mundo com motor central-traseiro.,false
+4C,Citroën DS,141,189,40000,1400000,Foi o primeiro carro com suspensão hidropneumatica auto-nivelante e farois direcionais.,false
+5C,Pontiac GTO,360,230,200000,500000,O GTO teve tres gerações sendo a primeira a mais famosa e desejada pelos colecionadores.,false
+6C,Koenigsegg Agera RS,1160,447,2700000,25,O Agera RS foi o carro mais rapido do mundo ate ser superado pelo Chiron em 2019.,false
+7C,McLaren P1,916,350,1150000,375,A McLaren P1 teve uma produção limitada a apenas 375 unidades Todas foram vendidas antes do lançamento oficial do carro.,false
+8C,Hennessey Venom GT,1244,435,1200000,13,O Hennessey Venom GT teve uma versão conversível chamada Spyder que foi inspirada pelo cantor Steven Tylerda banda Aerosmith.,false
+1D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central.,false
+2D,Hyundai HB20,130,190,55900,1057000,Carro muito popular entre garotas que cursam odontologia e pintam o cabelo de loiro..,false
+3D,Ford F-150,405,193,479900,534827,Alguns modelos vem com uma pequena geladera no console central.,false
+4D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central.,false
+5D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central.,false
+6D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central.,false
+7D,Ram 2500,365,160,456990,1000000,Alguns modelos vem com uma pequena geladera no console central.,false
+8D,Gol bolinha,145,191,17950,990000,Alguns modelos vem com uma pequena geladera no console central.,false
